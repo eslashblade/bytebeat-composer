@@ -347,6 +347,7 @@ option {
 
 #container-scroll {
 	max-width: 1028px;
+	min-height: 256px;
 	width: 100%;
 	margin-top: 2px;
 	overflow-y: auto;
@@ -507,9 +508,13 @@ button[name="close"] {
 }
 
 #error {
+	margin: 0;
+	max-width: 100vw;
+	max-height: calc(100% - 256px);
+	overflow-y: scroll;
 	color: #f92672;
-	font: 14px/14px monospace;
-	word-break: break-all;
+	font: 12px/12px monospace;
+	letter-spacing:-1px;
 }
 
 .tok-comment {

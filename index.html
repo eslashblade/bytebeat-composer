@@ -9,9 +9,9 @@
 	<title>Bytebeat composer</title>
 	<link rel="canonical" href="https://dollchan.net/bytebeat/">
 	<link rel="shortcut icon" href="favicon.png">
-	<link rel="stylesheet" type="text/css" href="style.css?version=2025091100">
-	<link rel="modulepreload" href="./build/audio-processor.mjs?version=2025091100">
-	<script type="module" async src="./build/index.js?version=2025091100"></script>
+	<link rel="stylesheet" type="text/css" href="style.css?version=2025092600">
+	<link rel="modulepreload" href="./build/audio-processor.mjs?version=2025092600">
+	<script type="module" async src="./build/index.js?version=2025092600"></script>
 </head>
 <body>
 	<main id="content">
@@ -98,7 +98,7 @@
 					<input id="control-volume" type="range" min="0" max="1" value=".5" step="any" title="Volume">
 				</div>
 			</div>
-			<div id="error"></div>
+			<pre id="error"></pre>
 			<div id="canvas-container" title="Click to play">
 				<canvas id="canvas-main" width="1024" height="256"></canvas>
 				<div id="canvas-timecursor"></div>
@@ -186,7 +186,14 @@
 			</details>
 			<details class="library-content">
 				<summary class="library-header">
-					<h1>All</h1> &ndash; all songs sorted by authors
+					<h1>Recent</h1> &ndash; recently added, sorted by authors
+					<svg class="loading-wait hidden"><use xlink:href="#symbol-wait"></use></svg>
+				</summary>
+				<div id="library-recent" class="library-container"></div>
+			</details>
+			<details class="library-content">
+				<summary class="library-header">
+					<h1>All</h1> &ndash; all songs, sorted by authors
 					<svg class="loading-wait hidden"><use xlink:href="#symbol-wait"></use></svg>
 				</summary>
 				<div id="library-all" class="library-container"></div>
