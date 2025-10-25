@@ -27,7 +27,7 @@ function fancyDie($message) {
 	<title>Bytebeat management</title>
 	<link rel="canonical" href="https://dollchan.net/bytebeat/">
 	<link rel="shortcut icon" href="favicon.png">
-	<link rel="stylesheet" type="text/css" href="style.css?version=2025092600">
+	<link rel="stylesheet" type="text/css" href="style.css?version=2025102500">
 </head>
 <body style="text-align: center;">
 	<div style="display: inline-block; padding: 8px 0;">
@@ -35,6 +35,7 @@ function fancyDie($message) {
 	</div>
 	<br>
 	<hr>
+	[<a href="https://github.com/SthephanShinkufag/bytebeat-composer/wiki/Library-moderation-instructions">Instructions</a>]
 	[<a href="./">Go to player</a>]
 	[<a href="javascript: window.history.go(-1);">Return</a>]
 </body>
@@ -806,7 +807,7 @@ function addSong($isEdit) {
 	// Drawing
 	$drawingMode = $_POST['drawing_mode'];
 	$drawingScale = trim($_POST['drawing_scale']);
-	$drawingScale = $drawingScale && is_numeric($drawingScale) ? $drawingScale : NULL;
+	$drawingScale = isset($drawingScale) && is_numeric($drawingScale) ? $drawingScale : NULL;
 	$drawing = $drawingMode || isset($drawingScale) ? addslashes('{' .
 		($drawingMode ? '"mode":"' . $drawingMode . '"' : '') .
 		(isset($drawingScale) ? ($drawingMode ? ',' : '') . '"scale":"' . $drawingScale . '"' : '') .
@@ -897,7 +898,7 @@ function addSong($isEdit) {
 			', "' . $tagsStr . '"' .
 			($rating ? ', ' . $rating : '') .
 			', "' . $user . '"' .
-			', "' . $date . '");');
+			', "' . $dateEdited . '");');
 	}
 
 	$sources = $_POST['remix'];
